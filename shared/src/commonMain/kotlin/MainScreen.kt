@@ -5,9 +5,14 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Button
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import cafe.adriel.voyager.core.model.rememberScreenModel
 import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
@@ -19,14 +24,25 @@ class MainScreen : Screen {
     @Composable
     override fun Content() {
         val navigator = LocalNavigator.currentOrThrow
+        val screenModel = rememberScreenModel { MainScreenModel() }
+        var count by remember { mutableStateOf(0) }
         Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-            Column {
-                Text("Main Screen")
+            Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                Text("Main Screen $count, ${screenModel.count.value}")
                 Button(
                     onClick = { navigator.push(SecondScreen()) },
                     modifier = Modifier.padding(top = 20.dp)
                 ) {
                     Text("Go Next")
+                }
+                Button(
+                    onClick = {
+                        count++
+                        screenModel.addOne()
+                    },
+                    modifier = Modifier.padding(top = 20.dp)
+                ) {
+                    Text("Add 1")
                 }
             }
 

@@ -20,7 +20,7 @@ class SecondScreen : Screen {
     override fun Content() {
         val navigator = LocalNavigator.currentOrThrow
         Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-            Column {
+            Column(horizontalAlignment = Alignment.CenterHorizontally) {
                 Text("Second Screen")
                 Button(
                     onClick = {
