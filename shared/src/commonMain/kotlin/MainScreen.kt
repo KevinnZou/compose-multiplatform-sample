@@ -28,7 +28,8 @@ class MainScreen : Screen {
         var count by remember { mutableStateOf(0) }
         Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                Text("Main Screen $count, ${screenModel.count.value}")
+                Text("Main Screen $count, ${screenModel.count}")
+                Text(screenModel.text, modifier = Modifier.padding(top = 20.dp))
                 Button(
                     onClick = { navigator.push(SecondScreen()) },
                     modifier = Modifier.padding(top = 20.dp)

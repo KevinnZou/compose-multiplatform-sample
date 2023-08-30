@@ -1,4 +1,4 @@
-rootProject.name = "MyApplication"
+rootProject.name = "JtxManagementCMM"
 
 include(":androidApp")
 include(":shared")
