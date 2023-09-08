@@ -16,6 +16,7 @@ import cafe.adriel.voyager.core.model.rememberScreenModel
 import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
+import co.touchlab.kermit.Logger
 
 /**
  * Created By Kevin Zou On 2023/8/22
@@ -40,6 +41,9 @@ class MainScreen : Screen {
                     onClick = {
                         count++
                         screenModel.addOne()
+                        Logger.i {
+                            "MainScreen Add One"
+                        }
                     },
                     modifier = Modifier.padding(top = 20.dp)
                 ) {

@@ -40,6 +40,7 @@ kotlin {
                 implementation("io.ktor:ktor-client-core:$ktorVersion")
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.2")
                 implementation("io.github.kevinnzou:compose-webview-multiplatform:0.2.0")
+                implementation("co.touchlab:kermit:2.0.0-RC5")
             }
         }
         val androidMain by getting {
