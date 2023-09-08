@@ -1,4 +1,4 @@
-rootProject.name = "JtxManagementCMM"
+rootProject.name = "compose-multiplatform-sample"
 
 include(":androidApp")
 include(":shared")

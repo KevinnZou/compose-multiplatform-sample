@@ -21,7 +21,7 @@ kotlin {
         ios.deploymentTarget = "14.1"
         podfile = project.file("../iosApp/Podfile")
         framework {
-            baseName = "shared"
+            baseName = "compose-webview-sample"
             isStatic = true
         }
         extraSpecAttributes["resources"] = "['src/commonMain/resources/**', 'src/iosMain/resources/**']"
@@ -39,6 +39,7 @@ kotlin {
                 implementation("cafe.adriel.voyager:voyager-navigator:1.0.0-rc05")
                 implementation("io.ktor:ktor-client-core:$ktorVersion")
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.2")
+                implementation("io.github.kevinnzou:compose-webview-multiplatform:0.2.0")
             }
         }
         val androidMain by getting {
